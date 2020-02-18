@@ -11,8 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: dev-to-jekyll
-      uses: benhayehudi/dev-posts-to-jekyll-markdown-action@compare-dates
+      uses: benhayehudi/dev-posts-to-jekyll-markdown-action@add-pr
     env:
       GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
       DEV_API_KEY: "${{ secrets.DEV_API_KEY }}"
       NUM_OF_POSTS: "${{ secrets.NUM_OF_POSTS }}"
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v2
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        committer: Ben Greenberg <bengreenberg@users.noreply.github.com>
+        title: New DEV Post To Blog Auto PR
