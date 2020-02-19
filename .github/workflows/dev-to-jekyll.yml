@@ -12,12 +12,6 @@ jobs:
     steps:
     - name: Check DEV and Update Jekyll Blog Posts
       uses: benhayehudi/dev-posts-to-jekyll-markdown-action@add-pr
-    - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v2
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        title: New DEV Post To Blog Auto PR
-        base: dev_to_jekyll
     env:
       GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
       DEV_API_KEY: "${{ secrets.DEV_API_KEY }}"
