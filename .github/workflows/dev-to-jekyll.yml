@@ -17,6 +17,7 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         title: New DEV Post To Blog Auto PR
+        base: dev_to_jekyll
     env:
       GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
       DEV_API_KEY: "${{ secrets.DEV_API_KEY }}"
