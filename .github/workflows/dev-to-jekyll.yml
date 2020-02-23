@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Check DEV and Update Jekyll Blog Posts
-      uses: benhayehudi/dev-posts-to-jekyll-markdown-action@master
+      uses: benhayehudi/dev-posts-to-jekyll-markdown-action@debug
     env:
       GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
       DEV_API_KEY: "${{ secrets.DEV_API_KEY }}"
